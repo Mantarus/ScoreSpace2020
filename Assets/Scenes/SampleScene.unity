@@ -138,6 +138,16 @@ PrefabInstance:
       propertyPath: respawnDistance
       value: 140
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,6 +207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -323,6 +338,16 @@ PrefabInstance:
       propertyPath: respawnDistance
       value: 140
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -383,8 +408,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
+--- !u!1 &626467886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626467889}
+  - component: {fileID: 626467887}
+  m_Layer: 0
+  m_Name: GameZoneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &626467887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626467886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &626467889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626467886}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 60}
+  m_LocalScale: {x: 30, y: 5, z: 140}
+  m_Children: []
+  m_Father: {fileID: 839468222}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &647955528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,6 +475,16 @@ PrefabInstance:
         type: 3}
       propertyPath: respawnDistance
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
@@ -462,6 +546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!1 &694711036
@@ -475,7 +564,6 @@ GameObject:
   - component: {fileID: 694711037}
   - component: {fileID: 694711040}
   - component: {fileID: 694711039}
-  - component: {fileID: 694711038}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -497,19 +585,6 @@ Transform:
   m_Father: {fileID: 1601864977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &694711038
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694711036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &694711039
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -574,6 +649,16 @@ PrefabInstance:
       propertyPath: respawnDistance
       value: 140
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,8 +719,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
+--- !u!1 &839468221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839468222}
+  m_Layer: 0
+  m_Name: Triggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839468222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839468221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1812617290}
+  - {fileID: 626467889}
+  - {fileID: 1457625331}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849190939
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,10 +983,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   truck: {fileID: 1085315737}
   man: {fileID: 1601864977}
-  roadTrigger: {fileID: 1812617290}
+  triggers: {fileID: 839468222}
   cameraSpeed: 0.5
   cameraOffset: {x: 0, y: 13, z: -3}
-  roadTriggerOffset: -4
+  triggersZOffset: 7
 --- !u!54 &910754008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1144,7 +1267,6 @@ GameObject:
   - component: {fileID: 1443083221}
   - component: {fileID: 1443083224}
   - component: {fileID: 1443083223}
-  - component: {fileID: 1443083222}
   m_Layer: 0
   m_Name: Hat
   m_TagString: Untagged
@@ -1166,19 +1288,6 @@ Transform:
   m_Father: {fileID: 1601864977}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1443083222
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443083220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1443083223
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1325,6 +1434,50 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1457625328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457625331}
+  - component: {fileID: 1457625329}
+  m_Layer: 0
+  m_Name: SpawnZoneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1457625329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457625328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1457625331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457625328}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 125}
+  m_LocalScale: {x: 30, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 839468222}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1550447410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
@@ -1347,6 +1500,16 @@ PrefabInstance:
         type: 3}
       propertyPath: respawnDistance
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
@@ -1407,6 +1570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -1497,6 +1665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601864977}
   - component: {fileID: 1601864978}
+  - component: {fileID: 1601864980}
   - component: {fileID: 1601864979}
   m_Layer: 0
   m_Name: Man
@@ -1551,6 +1720,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &1601864980
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601864976}
+  m_Material: {fileID: 13400000, guid: 9395066e47f1d46358a94fea43912128, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.25
+  m_Height: 1.55
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.375, z: 0}
 --- !u!1001 &1747736887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1567,6 +1750,16 @@ PrefabInstance:
         type: 3}
       propertyPath: respawnDistance
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
@@ -1628,6 +1821,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!4 &1747736888 stripped
@@ -1673,12 +1871,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812617286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -11}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 5}
   m_LocalScale: {x: 30, y: 5, z: 30}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 839468222}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1935503037 stripped
 Transform:
@@ -1716,7 +1914,7 @@ Transform:
   - {fileID: 1446492262}
   - {fileID: 1057844049}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004683270
 GameObject:
@@ -1729,7 +1927,6 @@ GameObject:
   - component: {fileID: 2004683271}
   - component: {fileID: 2004683274}
   - component: {fileID: 2004683273}
-  - component: {fileID: 2004683272}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1751,19 +1948,6 @@ Transform:
   m_Father: {fileID: 1601864977}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2004683272
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004683270}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2004683273
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1858,7 +2042,7 @@ Transform:
   - {fileID: 2132459124}
   - {fileID: 1550447410}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2132459124 stripped
 Transform:
@@ -1960,6 +2144,16 @@ PrefabInstance:
       propertyPath: respawnDistance
       value: 140
       objectReference: {fileID: 0}
+    - target: {fileID: 8028090212889827550, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214164849820, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8028090214307314796, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2019,6 +2213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028090214464589353, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}

@@ -62,7 +62,7 @@ public class TruckMover : MonoBehaviour
             man.transform.parent = null;
             _manRb.isKinematic = false;
             _manRb.constraints = RigidbodyConstraints.None;
-            _manRb.velocity = Vector3.up * ejectSpeed + _rb.velocity;
+            _manRb.velocity = Vector3.up * ejectSpeed + _rb.velocity.normalized * _speed;
             _manRb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
 
             man = null;

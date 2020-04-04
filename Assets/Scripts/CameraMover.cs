@@ -5,10 +5,10 @@ public class CameraMover : MonoBehaviour
 {
     public Transform truck;
     public Transform man;
-    public Transform roadTrigger;
+    public Transform triggers;
     public float cameraSpeed;
     public Vector3 cameraOffset;
-    public float roadTriggerOffset;
+    public float triggersZOffset;
 
     private Transform _target;
 
@@ -21,13 +21,13 @@ public class CameraMover : MonoBehaviour
     {
         var cameraPos = transform.position;
         var targetPos = _target.position;
-        var triggerPos = roadTrigger.position;
+        var triggerPos = triggers.position;
         
         var desiredPosition = targetPos + cameraOffset - new Vector3(targetPos.x / 2, 0, 0);
         var smoothedPosition = Vector3.Lerp(cameraPos, desiredPosition, cameraSpeed);
         
         transform.position = smoothedPosition;
-        roadTrigger.position = new Vector3(0, triggerPos.y, cameraPos.z + roadTriggerOffset);
+        triggers.position = new Vector3(0, triggerPos.y, cameraPos.z + triggersZOffset);
     }
 
     public void SwitchTarget()
