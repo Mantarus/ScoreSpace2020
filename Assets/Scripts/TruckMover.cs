@@ -11,7 +11,7 @@ public class TruckMover : MonoBehaviour
     public float rotationOnCrash;
     public GameObject man;
     public float ejectSpeed;
-    public CameraMover camera;
+    public CameraMover cameraMover;
     
     public Text coordsText;
 
@@ -58,7 +58,7 @@ public class TruckMover : MonoBehaviour
 
         if (man != null && _manRb != null)
         {
-            camera.SwitchTarget();
+            cameraMover.SwitchTarget();
             man.transform.parent = null;
             _manRb.isKinematic = false;
             _manRb.constraints = RigidbodyConstraints.None;

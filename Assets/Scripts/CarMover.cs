@@ -27,4 +27,12 @@ public class CarMover : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.None;
         // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("GameZoneTrigger"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
