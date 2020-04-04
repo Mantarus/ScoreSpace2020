@@ -10,7 +10,7 @@ public class TruckMover : MonoBehaviour
     public float turning;
     public float rotationOnCrash;
     public GameObject man;
-    public float ejectSpeed;
+    public float ejectMultiplier;
     public CameraMover cameraMover;
     
     public Text coordsText;
@@ -54,7 +54,7 @@ public class TruckMover : MonoBehaviour
         _active = false;
         _rb.constraints = RigidbodyConstraints.None;
         // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
-        Time.timeScale = 0.3f;
+        // Time.timeScale = 0.3f;
 
         if (man != null && _manRb != null)
         {
@@ -62,7 +62,7 @@ public class TruckMover : MonoBehaviour
             man.transform.parent = null;
             _manRb.isKinematic = false;
             _manRb.constraints = RigidbodyConstraints.None;
-            _manRb.velocity = Vector3.up * ejectSpeed + _rb.velocity.normalized * _speed;
+            _manRb.velocity = Vector3.up * (ejectMultiplier * _speed) + Vector3.forward * _speed;
             _manRb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
 
             man = null;

@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
     public List<Transform> spawnPoints;
-    public int spawnDelayMilliseconds;
+    public int spawnDelayMid;
+    public float spawnDelayDisp;
     public GameObject carPrefab; 
 
-    private DateTime _lastSpawnTime = DateTime.Now;
-    private int _nextSpawnIdx = 0;
+    private DateTime _nextSpawnTime = DateTime.Now;
 
     private void FixedUpdate()
     {
         var now = DateTime.Now;
-        if ((_lastSpawnTime + TimeSpan.FromMilliseconds(spawnDelayMilliseconds)) < now)
+        if (_nextSpawnTime < now)
         {
-            _lastSpawnTime = now;
-            var spawn = spawnPoints[_nextSpawnIdx];
+            var spawnDelay = spawnDelayMid + Random.Range(-spawnDelayDisp, spawnDelayDisp) * spawnDelayMid;
+            _nextSpawnTime += TimeSpan.FromMilliseconds(spawnDelay);
+            
+            var spawn = spawnPoints[Random.Range(0, spawnPoints.Count - 1)];
+            
             Instantiate(carPrefab, spawn.position, spawn.rotation);
-            _nextSpawnIdx = (_nextSpawnIdx + 1) % spawnPoints.Count;
         }
     }
 }

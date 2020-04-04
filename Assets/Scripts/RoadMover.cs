@@ -6,7 +6,7 @@ public class RoadMover : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("RoadTrigger"))
+        if (other.gameObject.CompareTag("GameZoneTrigger"))
         {
             transform.position += Vector3.forward * respawnDistance;
         }

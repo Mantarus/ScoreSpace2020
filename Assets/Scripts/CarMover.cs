@@ -17,7 +17,7 @@ public class CarMover : MonoBehaviour
     {
         if (_active)
         {
-            _rb.velocity = Vector3.forward * speed;
+            _rb.velocity = transform.forward * speed;
         }
     }
 
