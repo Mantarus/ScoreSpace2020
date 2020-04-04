@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class TruckMover : MonoBehaviour
 {
     public float initialSpeed;
+    public float minSpeed;
+    public float maxSpeed;
     public float acceleration;
     public float turning;
     
@@ -19,13 +21,14 @@ public class TruckMover : MonoBehaviour
         _speed = initialSpeed;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var zValue = Input.GetAxis("Vertical") * acceleration;
         var xValue = Input.GetAxis("Horizontal") * turning;
-        var delta = Time.deltaTime;
-        _speed += zValue * delta;
-        _rb.velocity += new Vector3(xValue * delta, 0 , _speed * delta);
+        _speed += zValue * Time.deltaTime;
+        _speed = Mathf.Clamp(_speed, minSpeed, maxSpeed);
+        _rb.velocity = new Vector3(xValue , 0 , _speed);
+        transform.rotation = Quaternion.LookRotation(_rb.velocity);
         UpdateText();
     }
 
