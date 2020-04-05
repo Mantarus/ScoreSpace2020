@@ -7,11 +7,13 @@ public class TruckMover : MonoBehaviour
     public float minSpeed;
     public float maxSpeed;
     public float acceleration;
+    public float incrementalAcceleration;
     public float turning;
     public float backTurning;
     public float rotationOnCrash;
     
     public GameObject man;
+    public float manInertiaResistance;
     public float ejectMultiplier;
     
     public CameraMover cameraMover;
@@ -35,6 +37,8 @@ public class TruckMover : MonoBehaviour
     {
         if (_active)
         {
+            ApplyIncrementalAcceleration();
+            
             var actualAcceleration = Input.GetAxis("Vertical") * acceleration;
             if (_rb.velocity.z >= maxSpeed && actualAcceleration > 0) actualAcceleration = 0;
             if (_rb.velocity.z <= minSpeed && actualAcceleration < 0) actualAcceleration = 0;
@@ -46,15 +50,26 @@ public class TruckMover : MonoBehaviour
             }
 
             _rb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
-            _manRb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
+            _manRb.AddForce(Vector3.forward * (actualAcceleration * manInertiaResistance), ForceMode.Acceleration);
             
             _rb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
-            _manRb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
-            
+            _manRb.AddForce(Vector3.right * (actualTurning * manInertiaResistance), ForceMode.Acceleration);
+
             transform.rotation = Quaternion.LookRotation(_rb.velocity);
         }
 
         UpdateText();
+    }
+
+    private void ApplyIncrementalAcceleration()
+    {
+        var speedIncrement = incrementalAcceleration * Time.fixedDeltaTime;
+        
+        _rb.AddForce(Vector3.forward * speedIncrement, ForceMode.VelocityChange);
+        _manRb.AddForce(Vector3.forward * speedIncrement, ForceMode.VelocityChange);
+
+        minSpeed += speedIncrement;
+        maxSpeed += speedIncrement;
     }
 
     private void UpdateText()
