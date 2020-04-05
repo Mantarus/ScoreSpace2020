@@ -90,24 +90,24 @@ public class TruckMover : MonoBehaviour
             return;
         }
 
-        _active = false;
-        _rb.constraints = RigidbodyConstraints.None;
-        // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
-            
-        Time.timeScale = 0.5f;
-
-        DetachMan(true);
+        DeactivateAndDetachMan(true);
     }
 
-    public void DetachMan(bool eject)
+    public void DeactivateAndDetachMan(bool eject)
     {
         if (_manDetached)
         {
             return;
         }
         
-        //Switch camera to man
+        //Deactivate truck
+        _active = false;
+        _rb.constraints = RigidbodyConstraints.None;
+        // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
+        
+        //Switch camera to man and slow time down
         cameraMover.SwitchTarget();
+        Time.timeScale = 0.5f;
 
         //Detach man rigidbody from the truck and reset all constraints
         man.transform.parent = null;
