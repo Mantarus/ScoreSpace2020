@@ -5,10 +5,10 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
+    public List<GameObject> carPrefabs; 
     public List<Transform> spawnPoints;
     public int spawnDelayMid;
     public float spawnDelayDisp;
-    public GameObject carPrefab; 
 
     private DateTime _nextSpawnTime = DateTime.Now;
 
@@ -20,7 +20,8 @@ public class Spawner : MonoBehaviour
             var spawnDelay = spawnDelayMid + Random.Range(-spawnDelayDisp, spawnDelayDisp) * spawnDelayMid;
             _nextSpawnTime += TimeSpan.FromMilliseconds(spawnDelay);
             
-            var spawn = spawnPoints[Random.Range(0, spawnPoints.Count - 1)];
+            var spawn = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            var carPrefab = carPrefabs[Random.Range(0, carPrefabs.Count)];
             
             Instantiate(carPrefab, spawn.position, spawn.rotation);
         }

@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a3a5b51c0bfc4710b302679a8ae6203, type: 2}
+  - {fileID: 2100000, guid: 48186ae11f1e14f07a37f8742d15e2aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 270812651}
   - component: {fileID: 270812652}
   m_Layer: 0
-  m_Name: BlueCar
+  m_Name: BlackCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f028cef482f4cb4bb2b7d330bcdb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  minSpeed: 20
+  maxSpeed: 20
   rotationOnCrash: 1000
 --- !u!1 &6530459988319289431
 GameObject:

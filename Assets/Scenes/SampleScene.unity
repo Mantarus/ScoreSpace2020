@@ -584,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 626467886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 60}
-  m_LocalScale: {x: 30, y: 5, z: 200}
+  m_LocalScale: {x: 100, y: 5, z: 200}
   m_Children: []
   m_Father: {fileID: 839468222}
   m_RootOrder: 0
@@ -2002,6 +2002,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ca26b8b6c8e409d90efca1f787ac22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carPrefabs:
+  - {fileID: 6530459987864403267, guid: d19eb487b34d34244963c62759d22b36, type: 3}
+  - {fileID: 6530459987864403267, guid: 92ee7407ec6b34f29a1fb15f6bb119f7, type: 3}
+  - {fileID: 6530459987864403267, guid: 79bd7e6b2473946de8299b08eab713cd, type: 3}
+  - {fileID: 6530459987864403267, guid: 8a5cb84cd72ac4578880c71a940c1a6b, type: 3}
   spawnPoints:
   - {fileID: 1047714005}
   - {fileID: 1065723990}
@@ -2011,8 +2016,6 @@ MonoBehaviour:
   - {fileID: 2048700279}
   spawnDelayMid: 500
   spawnDelayDisp: 0.5
-  carPrefab: {fileID: 6530459987864403267, guid: 92ee7407ec6b34f29a1fb15f6bb119f7,
-    type: 3}
 --- !u!1 &1595854294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2618,7 @@ PrefabInstance:
     - target: {fileID: 6530459987864403266, guid: 92ee7407ec6b34f29a1fb15f6bb119f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 7.7
       objectReference: {fileID: 0}
     - target: {fileID: 6530459987864403266, guid: 92ee7407ec6b34f29a1fb15f6bb119f7,
         type: 3}
