@@ -8,9 +8,12 @@ public class TruckMover : MonoBehaviour
     public float maxSpeed;
     public float acceleration;
     public float turning;
+    public float backTurning;
     public float rotationOnCrash;
+    
     public GameObject man;
     public float ejectMultiplier;
+    
     public CameraMover cameraMover;
     
     public Text coordsText;
@@ -37,13 +40,16 @@ public class TruckMover : MonoBehaviour
             if (_rb.velocity.z <= minSpeed && actualAcceleration < 0) actualAcceleration = 0;
             
             var actualTurning = Input.GetAxis("Horizontal") * turning;
-            _rb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
-            _manRb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
-            // _rb.velocity = new Vector3(xValue, 0, _speed);
-            // _rb.AddForce(Vector3.forward * zValue, ForceMode.Acceleration);
-            
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.01)
+            {
+                actualTurning = -_rb.velocity.x * backTurning;
+            }
+
             _rb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
             _manRb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
+            
+            _rb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
+            _manRb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
             
             transform.rotation = Quaternion.LookRotation(_rb.velocity);
         }
@@ -64,7 +70,7 @@ public class TruckMover : MonoBehaviour
             _active = false;
             _rb.constraints = RigidbodyConstraints.None;
             // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
-            // Time.timeScale = 0.3f;
+            Time.timeScale = 0.5f;
 
             if (man != null && _manRb != null)
             {
