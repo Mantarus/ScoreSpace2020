@@ -69,4 +69,12 @@ public class TruckMover : MonoBehaviour
             _manRb = null;
         }
     }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("GameZoneTrigger"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
