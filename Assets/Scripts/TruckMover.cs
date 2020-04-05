@@ -17,26 +17,34 @@ public class TruckMover : MonoBehaviour
 
     private Rigidbody _rb;
     private Rigidbody _manRb;
-    private float _speed;
     private bool _active = true;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.velocity = Vector3.forward * initialSpeed;
-        _speed = initialSpeed;
         _manRb = man.GetComponent<Rigidbody>();
+        
+        _rb.velocity = Vector3.forward * initialSpeed;
+        _manRb.velocity = Vector3.forward * initialSpeed;
     }
 
     private void FixedUpdate()
     {
         if (_active)
         {
-            var zValue = Input.GetAxis("Vertical") * acceleration;
-            var xValue = Input.GetAxis("Horizontal") * turning;
-            _speed += zValue * Time.deltaTime;
-            _speed = Mathf.Clamp(_speed, minSpeed, maxSpeed);
-            _rb.velocity = new Vector3(xValue, 0, _speed);
+            var actualAcceleration = Input.GetAxis("Vertical") * acceleration;
+            if (_rb.velocity.z >= maxSpeed && actualAcceleration > 0) actualAcceleration = 0;
+            if (_rb.velocity.z <= minSpeed && actualAcceleration < 0) actualAcceleration = 0;
+            
+            var actualTurning = Input.GetAxis("Horizontal") * turning;
+            _rb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
+            _manRb.AddForce(Vector3.right * actualTurning, ForceMode.Acceleration);
+            // _rb.velocity = new Vector3(xValue, 0, _speed);
+            // _rb.AddForce(Vector3.forward * zValue, ForceMode.Acceleration);
+            
+            _rb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
+            _manRb.AddForce(Vector3.forward * actualAcceleration, ForceMode.Acceleration);
+            
             transform.rotation = Quaternion.LookRotation(_rb.velocity);
         }
 
@@ -51,22 +59,27 @@ public class TruckMover : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        _active = false;
-        _rb.constraints = RigidbodyConstraints.None;
-        // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
-        // Time.timeScale = 0.3f;
-
-        if (man != null && _manRb != null)
+        if (!other.gameObject.CompareTag("Man"))
         {
-            cameraMover.SwitchTarget();
-            man.transform.parent = null;
-            _manRb.isKinematic = false;
-            _manRb.constraints = RigidbodyConstraints.None;
-            _manRb.velocity = Vector3.up * (ejectMultiplier * _speed) + Vector3.forward * _speed;
-            _manRb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
+            _active = false;
+            _rb.constraints = RigidbodyConstraints.None;
+            // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
+            // Time.timeScale = 0.3f;
 
-            man = null;
-            _manRb = null;
+            if (man != null && _manRb != null)
+            {
+                var speed = _rb.velocity.z;
+                
+                cameraMover.SwitchTarget();
+                man.transform.parent = null;
+                _manRb.isKinematic = false;
+                _manRb.constraints = RigidbodyConstraints.None;
+                _manRb.velocity = Vector3.up * (ejectMultiplier * speed) + Vector3.forward * speed;
+                _manRb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
+
+                man = null;
+                _manRb = null;
+            }
         }
     }
     

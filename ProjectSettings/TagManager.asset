@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameZoneTrigger
   - WalkingZone
+  - Man
   layers:
   - Default
   - TransparentFX
