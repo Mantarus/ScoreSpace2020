@@ -14,10 +14,15 @@ public class BalanceChecker : MonoBehaviour
         }
     }
 
-    public void Die()
+    private void Die()
     {
         _alive = false;
         truckMover.DeactivateAndDetachMan(false);
+    }
+
+    public bool IsAlive()
+    {
+        return _alive;
     }
     
 }
