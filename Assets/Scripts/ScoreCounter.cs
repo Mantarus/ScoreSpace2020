@@ -85,7 +85,7 @@ public class ScoreCounter : MonoBehaviour
                              $"Your best score so far: {PlayerPrefs.GetInt(_highscorePref)}\n" +
                              "Press R to start again!";
             scoreText.text = "";
-            gameController.Pause();
+            gameController.EndGame();
         }
     }
 }
