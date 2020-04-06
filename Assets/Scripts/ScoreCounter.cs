@@ -82,7 +82,8 @@ public class ScoreCounter : MonoBehaviour
                              $"Total: {(int)_totalDistance}\n" +
                              $"Bonus: {(int)_bonusDistance}\n" +
                              $"Max Speed: {(int)_maxSpeed}\n" +
-                             $"Your best score so far: {PlayerPrefs.GetInt(_highscorePref)}";
+                             $"Your best score so far: {PlayerPrefs.GetInt(_highscorePref)}\n" +
+                             "Press R to start again!";
             scoreText.text = "";
             gameController.Pause();
         }

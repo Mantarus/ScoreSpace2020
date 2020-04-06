@@ -89,8 +89,8 @@ public class TruckMover : MonoBehaviour
 
     private void HideUI()
     {
-        speedText.text = "";
-        throttleText.text = "";
+        speedText.gameObject.SetActive(false);
+        throttleText.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision other)
