@@ -49,6 +49,7 @@ public class ScoreCounter : MonoBehaviour
         {
             _bonus = true;
             if (_manRb.IsSleeping()) _calculate = false;
+            if (man.transform.position.y < 0) _calculate = false;
             if (_calculate)
             {
                 var bonusDistanceDelta = Mathf.Max(_manRb.velocity.z * Time.fixedDeltaTime, 0);
