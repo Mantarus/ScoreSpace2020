@@ -5,8 +5,12 @@ public class GameController : MonoBehaviour
 {
     private bool _paused = false;
     private float _lastTimeScale = 1;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
     
-    // Update is called once per frame
     void Update()
     {
         CheckPause();
@@ -39,7 +43,6 @@ public class GameController : MonoBehaviour
     {
         if (_paused && Input.GetKeyDown(KeyCode.R))
         {
-            Unpause();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
