@@ -434,9 +434,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press ENTER to start\nPress ESC to pause\nOn pause press R to start again\nUse
-    WASD or ARROW KEYS to control the truck\nYour goal is to keep the man \nstay
-    on truck as long as possible"
+  m_Text: "Press ESC to unpause\nPress R to start again\nUse WASD or ARROW KEYS to
+    control the truck\nYour goal is to keep the man \nstay on truck as long as possible"
 --- !u!222 &274888098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2158,7 +2157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Press ENTER to start\nPress ESC to pause\nOn pause press R to start again\nUse
+  m_Text: "Press ENTER to start\nPress ESC to pause\nRress R to start again\nUse
     WASD or ARROW KEYS to control the truck\nYour goal is to keep the man \nstay
     on truck as long as possible"
 --- !u!222 &1335430439

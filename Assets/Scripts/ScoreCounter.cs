@@ -53,7 +53,7 @@ public class ScoreCounter : MonoBehaviour
         else
         {
             _bonus = true;
-            if (_manRb.IsSleeping()) _calculate = false;
+            if (_manRb.IsSleeping() || _manRb.velocity.magnitude < 0.1) _calculate = false;
             if (man.transform.position.y < 0) _calculate = false;
             if (_calculate)
             {

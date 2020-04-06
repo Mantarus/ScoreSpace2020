@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
         if (_nextSpawnTime < now)
         {
             var spawnDelay = spawnDelayMid + Random.Range(-spawnDelayDisp, spawnDelayDisp) * spawnDelayMid;
-            _nextSpawnTime += TimeSpan.FromMilliseconds(spawnDelay);
+            _nextSpawnTime = DateTime.Now + TimeSpan.FromMilliseconds(spawnDelay);
             
             var spawn = spawnPoints[Random.Range(0, spawnPoints.Count)];
             var carPrefab = carPrefabs[Random.Range(0, carPrefabs.Count)];
