@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BalanceChecker : MonoBehaviour
 {
     public TruckMover truckMover;
+    public AudioSource hitSound;
 
     private bool _alive = true;
 
@@ -11,6 +13,14 @@ public class BalanceChecker : MonoBehaviour
         if (_alive && (other.gameObject.CompareTag("WalkingZone") || other.gameObject.CompareTag("StandZone")))
         {
             Die();
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!_alive)
+        {
+            hitSound.Play();
         }
     }
 

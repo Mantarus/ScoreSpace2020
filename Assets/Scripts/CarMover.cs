@@ -5,6 +5,7 @@ public class CarMover : MonoBehaviour
     public float minSpeed;
     public float maxSpeed;
     public float rotationOnCrash;
+    public AudioSource hitSound;
 
     private Rigidbody _rb;
     private float _speed;
@@ -26,6 +27,7 @@ public class CarMover : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        hitSound.Play();
         _active = false;
         if (_rb != null)
         {

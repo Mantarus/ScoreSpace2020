@@ -17,6 +17,8 @@ public class TruckMover : MonoBehaviour
     public float ejectMultiplier;
 
     public CameraMover cameraMover;
+    public AudioSource drivingSound;
+    public AudioSource hitSound;
     
     public Text speedText;
     public Text throttleText;
@@ -41,6 +43,7 @@ public class TruckMover : MonoBehaviour
         {
             Move();
             UpdateUI();
+            drivingSound.pitch = _rb.velocity.z / initialSpeed;
         }
     }
 
@@ -113,6 +116,8 @@ public class TruckMover : MonoBehaviour
         //Deactivate truck
         _active = false;
         _rb.constraints = RigidbodyConstraints.None;
+        drivingSound.Stop();
+        hitSound.Play();
         HideUI();
         // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
         
