@@ -28,14 +28,16 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void Pause()
+    public void Pause()
     {
+        _paused = true;
         _lastTimeScale = Time.timeScale;
         Time.timeScale = 0;
     }
 
-    private void Unpause()
+    public void Unpause()
     {
+        _paused = false;
         Time.timeScale = _lastTimeScale;
     }
 
