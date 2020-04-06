@@ -80,7 +80,7 @@ public class TruckMover : MonoBehaviour
 
     private void UpdateUI()
     {
-        var speed = _rb.velocity.z;
+        var speed = (int)_rb.velocity.z;
         var throttle = (int)Mathf.Clamp((speed - minSpeed) / (maxSpeed - minSpeed) * 100, 0, 100);
 
         speedText.text = $"Speed: {speed}";
