@@ -1040,6 +1040,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922113246}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &975273684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975273685}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &975273685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975273684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036941699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1082,7 @@ GameObject:
   - component: {fileID: 1036941702}
   - component: {fileID: 1036941701}
   m_Layer: 5
-  m_Name: Truck Acc
+  m_Name: Truck throttle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,11 +1102,11 @@ RectTransform:
   m_Father: {fileID: 1446492262}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -210}
-  m_SizeDelta: {x: 1000, y: 200}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10, y: 500}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1036941701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Acc: XXX'
+  m_Text: 'Throttle: 50%'
 --- !u!222 &1036941702
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1245,7 +1275,8 @@ MonoBehaviour:
   manInertiaResistance: 0.7
   ejectMultiplier: 0.1
   cameraMover: {fileID: 910754007}
-  coordsText: {fileID: 1595854296}
+  speedText: {fileID: 1595854296}
+  throttleText: {fileID: 1036941701}
 --- !u!54 &1085315739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1635,7 +1666,7 @@ GameObject:
   - component: {fileID: 1595854297}
   - component: {fileID: 1595854296}
   m_Layer: 5
-  m_Name: Truck coords
+  m_Name: Truck speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,11 +1686,11 @@ RectTransform:
   m_Father: {fileID: 1446492262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 600, y: 200}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10, y: 600}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1595854296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,7 +1722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "X: 1 \nY: 2 \nZ: 3"
+  m_Text: 'Speed: 42'
 --- !u!222 &1595854297
 CanvasRenderer:
   m_ObjectHideFlags: 0

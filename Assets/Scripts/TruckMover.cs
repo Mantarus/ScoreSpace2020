@@ -18,7 +18,8 @@ public class TruckMover : MonoBehaviour
 
     public CameraMover cameraMover;
     
-    public Text coordsText;
+    public Text speedText;
+    public Text throttleText;
 
     private Rigidbody _rb;
     private Rigidbody _manRb;
@@ -39,8 +40,8 @@ public class TruckMover : MonoBehaviour
         if (_active)
         {
             Move();
+            UpdateUI();
         }
-        UpdateUI();
     }
 
     private void Move()
@@ -79,13 +80,22 @@ public class TruckMover : MonoBehaviour
 
     private void UpdateUI()
     {
-        var pos = transform.position;
-        coordsText.text = $"X: {pos.x}\nY: {pos.y}\nZ: {pos.z}";
+        var speed = _rb.velocity.z;
+        var throttle = (int)Mathf.Clamp((speed - minSpeed) / (maxSpeed - minSpeed) * 100, 0, 100);
+
+        speedText.text = $"Speed: {speed}";
+        throttleText.text = $"Throttle: {throttle}%";
+    }
+
+    private void HideUI()
+    {
+        speedText.text = "";
+        throttleText.text = "";
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Man"))
+        if (!_active || other.gameObject.CompareTag("Man"))
         {
             return;
         }
@@ -103,6 +113,7 @@ public class TruckMover : MonoBehaviour
         //Deactivate truck
         _active = false;
         _rb.constraints = RigidbodyConstraints.None;
+        HideUI();
         // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
         
         //Switch camera to man and slow time down
