@@ -14,8 +14,13 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0;
-        uiController.ShowWelcomeScreen();
+        
+        uiController.HideInGameUI();
+        uiController.HidePauseScreen();
+        uiController.HideTotalScoreScreen();
+        
         uiController.SetHighscore(PlayerPrefs.GetInt("highscore"));
+        uiController.ShowWelcomeScreen();
     }
     
     void Update()
@@ -84,5 +89,7 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
         _gameEnded = true;
+        uiController.HideInGameUI();
+        uiController.ShowTotalScoreScreen();
     }
 }

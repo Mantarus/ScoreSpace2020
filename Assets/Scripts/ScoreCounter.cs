@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
     public GameController gameController;
+    public UIController uiController;
+    
     public GameObject truck;
     public GameObject man;
-    public Text scoreText;
-    public Text totalText;
     
     public float distanceMultiplier;
     public float speedMultiplier;
@@ -25,7 +24,7 @@ public class ScoreCounter : MonoBehaviour
     private float _maxSpeed;
     private float _totalDistance;
     private float _bonusDistance;
-    private string _highscorePref = "highscore";
+    private const string HighscorePref = "highscore";
 
     private void Start()
     {
@@ -33,8 +32,6 @@ public class ScoreCounter : MonoBehaviour
         _truckRb = truck.GetComponent<Rigidbody>();
         _manRb = man.GetComponent<Rigidbody>();
         _manChecker = man.GetComponent<BalanceChecker>();
-
-        totalText.text = "";
     }
 
     private void FixedUpdate()
@@ -64,7 +61,6 @@ public class ScoreCounter : MonoBehaviour
                 _bonusDistance = man.transform.position.z - _totalDistance;
             }
         }
-        
         UpdateScore();
     }
 
@@ -72,19 +68,13 @@ public class ScoreCounter : MonoBehaviour
     {
         if (_calculate)
         {
-            scoreText.text = $"Score: {(int)_score}";
-            if (_bonus) scoreText.text += " BONUS!";
+            uiController.SetScore(_score, _bonus);
         }
         else
         {
-            PlayerPrefs.SetInt(_highscorePref, Mathf.Max((int)_score, PlayerPrefs.GetInt(_highscorePref)));
-            totalText.text = $"Score: {(int)_score}\n" +
-                             $"Total: {(int)_totalDistance}\n" +
-                             $"Bonus: {(int)_bonusDistance}\n" +
-                             $"Max Speed: {(int)_maxSpeed}\n" +
-                             $"Your best score so far: {PlayerPrefs.GetInt(_highscorePref)}\n" +
-                             "Press R to start again!";
-            scoreText.text = "";
+            var highScore = Mathf.Max((int)_score, PlayerPrefs.GetInt(HighscorePref));
+            PlayerPrefs.SetInt(HighscorePref, highScore);
+            uiController.SetTotalScore(_score, _totalDistance, _bonusDistance, _maxSpeed, highScore);
             gameController.EndGame();
         }
     }
