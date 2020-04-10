@@ -2889,6 +2889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ca26b8b6c8e409d90efca1f787ac22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cacheSize: 10
   carPrefabs:
   - {fileID: 6530459987864403267, guid: d19eb487b34d34244963c62759d22b36, type: 3}
   - {fileID: 6530459987864403267, guid: 92ee7407ec6b34f29a1fb15f6bb119f7, type: 3}
@@ -3678,6 +3679,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 270812652, guid: 92ee7407ec6b34f29a1fb15f6bb119f7, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 1580958925}
     - target: {fileID: 6530459987864403266, guid: 92ee7407ec6b34f29a1fb15f6bb119f7,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,26 +2,29 @@
 
 public class CarMover : MonoBehaviour
 {
-    public float minSpeed;
-    public float maxSpeed;
-    public float rotationOnCrash;
+    public float speed;
     public AudioSource hitSound;
+    public Spawner spawner;
 
     private Rigidbody _rb;
-    private float _speed;
     private bool _active = true;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _speed = Random.Range(minSpeed, maxSpeed);
+        SetRbConstraints();
+    }
+
+    private void SetRbConstraints()
+    {
+        _rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     }
 
     private void FixedUpdate()
     {
         if (_active)
         {
-            _rb.velocity = transform.forward * _speed;
+            _rb.velocity = transform.forward * speed;
         }
     }
 
@@ -32,7 +35,6 @@ public class CarMover : MonoBehaviour
         if (_rb != null)
         {
             _rb.constraints = RigidbodyConstraints.None;
-            // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
         }
     }
 
@@ -40,7 +42,14 @@ public class CarMover : MonoBehaviour
     {
         if (other.CompareTag("GameZoneTrigger"))
         {
-            Destroy(gameObject);
+            ResetCarState();
+            spawner.StashCar(gameObject);
         }
+    }
+
+    private void ResetCarState()
+    {
+        _active = true;
+        SetRbConstraints();
     }
 }

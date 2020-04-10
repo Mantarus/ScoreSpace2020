@@ -156,10 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f028cef482f4cb4bb2b7d330bcdb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 20
-  maxSpeed: 20
-  rotationOnCrash: 1000
+  speed: 20
   hitSound: {fileID: 2200278941416825251}
+  spawner: {fileID: 0}
 --- !u!82 &2200278941416825251
 AudioSource:
   m_ObjectHideFlags: 0
