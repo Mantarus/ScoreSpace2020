@@ -469,6 +469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!4 &272253797 stripped
@@ -654,6 +659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!1001 &462535882
@@ -722,6 +732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -797,6 +812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -1941,6 +1961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!4 &1029059590 stripped
@@ -2701,6 +2726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!1 &1285185905
@@ -3150,13 +3180,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1580958924}
   - component: {fileID: 1580958925}
+  - component: {fileID: 1580958926}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1580958924
 Transform:
   m_ObjectHideFlags: 0
@@ -3202,8 +3233,21 @@ MonoBehaviour:
   - {fileID: 706713424}
   - {fileID: 201720184}
   - {fileID: 1931774557}
-  spawnDelayMid: 1000
-  spawnDelayDisp: 0.3
+  spawnDelayMid: 0
+  spawnDelayDisp: 0
+--- !u!65 &1580958926
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580958923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 10, z: 80}
+  m_Center: {x: 0, y: 3, z: 140}
 --- !u!1 &1595854294
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,6 +3653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadBlock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
 --- !u!1001 &1797165691
@@ -3677,6 +3726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -3820,6 +3874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}
@@ -4023,7 +4082,7 @@ GameObject:
   - component: {fileID: 2119779860}
   m_Layer: 0
   m_Name: Road
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4063,6 +4122,10 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 1580958925}
+    - target: {fileID: 270812652, guid: 92ee7407ec6b34f29a1fb15f6bb119f7, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6530459987864403266, guid: 92ee7407ec6b34f29a1fb15f6bb119f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4191,6 +4254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421054589059506, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7c0ee16c4bb427eb84edb5ad5ff084, type: 3}

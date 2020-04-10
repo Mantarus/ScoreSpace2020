@@ -8,6 +8,7 @@ TagManager:
   - WalkingZone
   - Man
   - StandZone
+  - Environment
   layers:
   - Default
   - TransparentFX

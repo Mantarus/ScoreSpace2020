@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
 
     private readonly Queue<GameObject> _carCache = new Queue<GameObject>();
     private DateTime _nextSpawnTime = DateTime.Now;
+    private int _objectsInside = 0;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class Spawner : MonoBehaviour
     private void FixedUpdate()
     {
         var now = DateTime.Now;
-        if (_nextSpawnTime < now)
+        if (_nextSpawnTime < now && _objectsInside == 0)
         {
             var spawnDelay = spawnDelayMid + Random.Range(-spawnDelayDisp, spawnDelayDisp) * spawnDelayMid;
             _nextSpawnTime = DateTime.Now + TimeSpan.FromMilliseconds(spawnDelay);
@@ -68,5 +69,21 @@ public class Spawner : MonoBehaviour
         car.transform.position = spawn.position;
         car.transform.rotation = spawn.rotation;
         car.SetActive(true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Environment"))
+        {
+            _objectsInside++;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Environment"))
+        {
+            _objectsInside--;
+        }
     }
 }
