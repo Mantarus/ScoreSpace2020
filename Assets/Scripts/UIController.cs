@@ -19,10 +19,9 @@ public class UIController : MonoBehaviour
         highscoreText.text = $"HIGHSCORE: {(int)score}";
     }
 
-    public void SetScore(float score, bool bonus)
+    public void SetScore(float score, float speedMultiplier, bool bonus)
     {
-        scoreText.text = $"Score: {(int)score}";
-        if (bonus) scoreText.text += " BONUS!";
+        scoreText.text = $"Score: {(int)score} " + (bonus ? " BONUS!" : $"x {speedMultiplier:0.0}");
     }
 
     public void SetSpeed(float speed)

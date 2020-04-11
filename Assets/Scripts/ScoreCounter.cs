@@ -5,14 +5,13 @@ public class ScoreCounter : MonoBehaviour
     public GameController gameController;
     public UIController uiController;
     
-    public GameObject truck;
+    public TruckMover truck;
     public GameObject man;
     
-    public float distanceMultiplier;
-    public float speedMultiplier;
+    public float minSpeedMultiplier;
+    public float maxSpeedMultiplier;
     public int bonusMultiplier;
-
-    private Rigidbody _truckRb;
+    
     private Rigidbody _manRb;
     private BalanceChecker _manChecker;
 
@@ -29,7 +28,6 @@ public class ScoreCounter : MonoBehaviour
     private void Start()
     {
         _initialZPosition = truck.transform.position.z;
-        _truckRb = truck.GetComponent<Rigidbody>();
         _manRb = man.GetComponent<Rigidbody>();
         _manChecker = man.GetComponent<BalanceChecker>();
     }
@@ -38,11 +36,11 @@ public class ScoreCounter : MonoBehaviour
     {
         if (_manChecker.IsAlive())
         {
-            var speed = _truckRb.velocity.z;
+            var speed = truck.GetForwardSpeed();
             if (speed > _maxSpeed) _maxSpeed = speed;
 
             var distanceDelta = Mathf.Max(speed * Time.fixedDeltaTime, 0);
-            var scoreIncrement = distanceDelta * distanceMultiplier;
+            var scoreIncrement = distanceDelta * GetSpeedMultiplier();
             _score += scoreIncrement;
 
             _totalDistance = truck.transform.position.z - _initialZPosition;
@@ -64,11 +62,17 @@ public class ScoreCounter : MonoBehaviour
         UpdateScore();
     }
 
+    private float GetSpeedMultiplier()
+    {
+        if (truck == null) return 0;
+        return minSpeedMultiplier + (maxSpeedMultiplier - minSpeedMultiplier) * truck.GetThrottle();
+    }
+
     private void UpdateScore()
     {
         if (_calculate)
         {
-            uiController.SetScore(_score, _bonus);
+            uiController.SetScore(_score, GetSpeedMultiplier(), _bonus);
         }
         else
         {

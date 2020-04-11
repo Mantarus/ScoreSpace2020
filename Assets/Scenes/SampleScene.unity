@@ -2164,11 +2164,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 975273686}
   uiController: {fileID: 975273688}
-  truck: {fileID: 1085315736}
+  truck: {fileID: 1085315738}
   man: {fileID: 1601864976}
-  distanceMultiplier: 1
-  speedMultiplier: 1
-  bonusMultiplier: 5
+  minSpeedMultiplier: 0.1
+  maxSpeedMultiplier: 2
+  bonusMultiplier: 10
 --- !u!114 &975273688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2593,16 +2593,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 30
-  minSpeed: 10
-  maxSpeed: 60
+  minSpeed: 25
+  maxSpeed: 50
   acceleration: 20
-  incrementalAcceleration: 0.5
+  incrementalAcceleration: 0.2
   turning: 30
   backTurning: 5
-  rotationOnCrash: 100
   man: {fileID: 1601864976}
-  manInertiaResistance: 0.7
-  ejectMultiplier: 0.1
+  manInertiaResistance: 0.75
+  ejectMultiplier: 0.2
+  rotationOnCrash: 100
   cameraMover: {fileID: 910754007}
   drivingSound: {fileID: 1085315741}
   hitSound: {fileID: 1085315742}
@@ -3801,7 +3801,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 10, z: 80}
+  m_Size: {x: 50, y: 10, z: 30}
   m_Center: {x: 0, y: 3, z: 140}
 --- !u!1 &1595854294
 GameObject:

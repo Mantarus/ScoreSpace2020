@@ -10,11 +10,11 @@ public class TruckMover : MonoBehaviour
     public float incrementalAcceleration;
     public float turning;
     public float backTurning;
-    public float rotationOnCrash;
     
     public GameObject man;
     public float manInertiaResistance;
     public float ejectMultiplier;
+    public float rotationOnCrash;
 
     public CameraMover cameraMover;
     public AudioSource drivingSound;
@@ -83,8 +83,8 @@ public class TruckMover : MonoBehaviour
 
     private void UpdateUI()
     {
-        var speed = (int)_rb.velocity.z;
-        var throttle = (int)Mathf.Clamp((speed - minSpeed) / (maxSpeed - minSpeed) * 100, 0, 100);
+        var speed = (int)GetForwardSpeed();
+        var throttle = (int)(GetThrottle() * 100);
 
         speedText.text = $"{speed}mph";
         throttleText.text = $"PWR: {throttle}%";
@@ -151,5 +151,15 @@ public class TruckMover : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public float GetForwardSpeed()
+    {
+        return _rb.velocity.z;
+    }
+
+    public float GetThrottle()
+    {
+        return Mathf.Clamp((GetForwardSpeed() - minSpeed) / (maxSpeed - minSpeed), 0, 1);
     }
 }
