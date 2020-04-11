@@ -10,7 +10,7 @@ public class ScoreCounter : MonoBehaviour
     
     public float distanceMultiplier;
     public float speedMultiplier;
-    public float bonusMultiplier;
+    public int bonusMultiplier;
 
     private Rigidbody _truckRb;
     private Rigidbody _manRb;

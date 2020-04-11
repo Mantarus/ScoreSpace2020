@@ -35,12 +35,17 @@ public class UIController : MonoBehaviour
         throttleText.text = $"PWR: {(int)throttle}%";
     }
 
-    public void SetTotalScore(float score, float distance, float bonus, float maxSpeed, float highscore)
+    public void SetTotalScore(
+        float score, 
+        float distance, 
+        float bonusDistance,
+        float maxSpeed, 
+        float highscore)
     {
-        totalScoreText.text = $"Total score: {(int)score}\n" + 
-                              $"Distance: {(int)distance}\n" + 
-                              $"Bonus : {(int)bonus}\n" + 
-                              $"Max Speed: {(int)maxSpeed}\n" + 
+        totalScoreText.text = $"Total Score: {(int)score}\n" + 
+                              $"Drive Distance: {(int)distance}\n" + 
+                              $"Bonus Distance: {(int)bonusDistance}\n" + 
+                              $"Top Speed: {(int)maxSpeed}mph\n" + 
                               $"Your best score so far: {(int)highscore}\n" + 
                               "Press R to start again!";
     }
