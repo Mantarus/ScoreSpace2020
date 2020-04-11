@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
 
     public void SetScore(float score, float speedMultiplier, bool bonus)
     {
-        scoreText.text = $"Score: {(int)score} " + (bonus ? " BONUS!" : $"x {speedMultiplier:0.0}");
+        scoreText.text = $"Score: {(int)score} " + (bonus ? "BONUS!" : $"x {speedMultiplier:0.0}");
     }
 
     public void SetSpeed(float speed)
@@ -31,7 +31,7 @@ public class UIController : MonoBehaviour
 
     public void SetThrottle(float throttle)
     {
-        throttleText.text = $"PWR: {(int)throttle}%";
+        throttleText.text = $"PWR: {(int)(throttle * 100)}%";
     }
 
     public void SetTotalScore(

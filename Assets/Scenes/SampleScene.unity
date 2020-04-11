@@ -2606,8 +2606,7 @@ MonoBehaviour:
   cameraMover: {fileID: 910754007}
   drivingSound: {fileID: 1085315741}
   hitSound: {fileID: 1085315742}
-  speedText: {fileID: 1595854296}
-  throttleText: {fileID: 1036941701}
+  uiController: {fileID: 975273688}
 --- !u!54 &1085315739
 Rigidbody:
   m_ObjectHideFlags: 0

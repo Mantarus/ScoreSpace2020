@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class TruckMover : MonoBehaviour
 {
@@ -19,9 +18,8 @@ public class TruckMover : MonoBehaviour
     public CameraMover cameraMover;
     public AudioSource drivingSound;
     public AudioSource hitSound;
-    
-    public Text speedText;
-    public Text throttleText;
+
+    public UIController uiController;
 
     private Rigidbody _rb;
     private Rigidbody _manRb;
@@ -83,17 +81,8 @@ public class TruckMover : MonoBehaviour
 
     private void UpdateUI()
     {
-        var speed = (int)GetForwardSpeed();
-        var throttle = (int)(GetThrottle() * 100);
-
-        speedText.text = $"{speed}mph";
-        throttleText.text = $"PWR: {throttle}%";
-    }
-
-    private void HideUI()
-    {
-        speedText.gameObject.SetActive(false);
-        throttleText.gameObject.SetActive(false);
+        uiController.SetSpeed(GetForwardSpeed());
+        uiController.SetThrottle(GetThrottle());
     }
 
     private void OnCollisionEnter(Collision other)
@@ -118,7 +107,7 @@ public class TruckMover : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.None;
         drivingSound.Stop();
         hitSound.Play();
-        HideUI();
+        uiController.DisableTruckUI();
         // _rb.angularVelocity = Random.insideUnitCircle.normalized * rotationOnCrash;
         
         //Switch camera to man and slow time down
