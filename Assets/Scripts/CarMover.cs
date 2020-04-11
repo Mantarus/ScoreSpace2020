@@ -30,6 +30,7 @@ public class CarMover : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        hitSound.volume = Mathf.Clamp01(other.relativeVelocity.magnitude / 100);
         hitSound.Play();
         _active = false;
         if (_rb != null)

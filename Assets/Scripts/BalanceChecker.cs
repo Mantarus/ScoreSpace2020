@@ -20,6 +20,7 @@ public class BalanceChecker : MonoBehaviour
     {
         if (!_alive)
         {
+            hitSound.volume = Mathf.Clamp01(other.relativeVelocity.magnitude / 100);
             hitSound.Play();
         }
     }
