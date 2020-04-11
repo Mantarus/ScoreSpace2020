@@ -2168,7 +2168,7 @@ MonoBehaviour:
   man: {fileID: 1601864976}
   distanceMultiplier: 1
   speedMultiplier: 1
-  bonusMultiplier: 3
+  bonusMultiplier: 5
 --- !u!114 &975273688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   minSpeed: 10
   maxSpeed: 60
   acceleration: 20
-  incrementalAcceleration: 1
+  incrementalAcceleration: 0.5
   turning: 30
   backTurning: 5
   rotationOnCrash: 100
