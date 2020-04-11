@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public UIController uiController;
+    public AudioSource music;
     
     private bool _gameStarted = false;
     private bool _gameEnded = false;
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour
         _paused = true;
         _lastTimeScale = Time.timeScale;
         Time.timeScale = 0;
+        music.Pause();
     }
 
     private void Unpause()
@@ -67,6 +69,7 @@ public class GameController : MonoBehaviour
         
         _paused = false;
         Time.timeScale = _lastTimeScale;
+        music.UnPause();
     }
 
     private void CheckRestart()
@@ -83,6 +86,7 @@ public class GameController : MonoBehaviour
         _gameStarted = true;
         uiController.HideWelcomeScreen();
         uiController.ShowInGameUI();
+        music.Play();
     }
 
     public void EndGame()
@@ -91,5 +95,6 @@ public class GameController : MonoBehaviour
         _gameEnded = true;
         uiController.HideInGameUI();
         uiController.ShowTotalScoreScreen();
+        music.Stop();
     }
 }
